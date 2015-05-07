@@ -41,7 +41,7 @@ INC_DIR = include
 SRC_DIR = src
 
 COM_OBJS = $(HOME)/$(SRC_DIR)/partitioner.o $(HOME)/$(SRC_DIR)/netcdf_partitioner.o $(HOME)/$(SRC_DIR)/hdf5_partitioner.o
-PROGS = netcdf_data_generator hdf5_data_generator histogram_offline kmeans_offline logistic_regression_offline moving_avg_offline moving_median_offline savitzky_golay_offline num_count_iterative_offline
+PROGS = netcdf_data_generator hdf5_data_generator histogram_offline kmeans_offline logistic_regression_offline moving_avg_offline moving_median_offline savitzky_golay_offline num_count_iterative_offline naive_bayes_offline
 
 all: $(PROGS)
 
@@ -79,6 +79,9 @@ savitzky_golay_offline: savitzky_golay_offline.cpp $(COM_OBJS)
 	$(MPI_CC) $(CFLAGS) $^ -o $@ $(OPENMP_LIB) $(FORMAT_LIB) -I$(HOME)/$(COMMON_HEADER_DIR) -I$(HOME)/$(INC_DIR)
 
 num_count_iterative_offline: num_count_iterative_offline.cpp $(COM_OBJS)
+	$(MPI_CC) $(CFLAGS) $^ -o $@ $(OPENMP_LIB) $(FORMAT_LIB) -I$(HOME)/$(COMMON_HEADER_DIR) -I$(HOME)/$(INC_DIR)
+
+naive_bayes_offline: naive_bayes_offline.cpp $(COM_OBJS)
 	$(MPI_CC) $(CFLAGS) $^ -o $@ $(OPENMP_LIB) $(FORMAT_LIB) -I$(HOME)/$(COMMON_HEADER_DIR) -I$(HOME)/$(INC_DIR)
 
 clean:
