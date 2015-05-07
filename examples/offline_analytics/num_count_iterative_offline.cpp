@@ -26,7 +26,7 @@
 #define STEP  1  // process each number individually
 #define NUM_ELEMS 32  // The total number of elements of the simulated data.
 #define NUM_DISTINCT_ELEMS 3  // The total number of elements of the simulated data.
-#define NUM_ITERS 1  // The # of iterations.
+#define NUM_ITERS 2  // The # of iterations.
 
 #define PRINT_COMBINATION_MAP 1
 #define PRINT_OUTPUT 1

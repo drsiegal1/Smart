@@ -72,7 +72,8 @@ template <class In, class Out>
 
     /* Additional Function Overriding */
     // Set up the initial centroids in combination_map_.
-    void process_extra_data(const void* extra_data, map<int, unique_ptr<RedObj>>& combination_map) override {
+/* 
+      void process_extra_data(const void* extra_data, map<int, unique_ptr<RedObj>>& combination_map) override {
       dprintf("Scheduler: Processing extra data...\n");
 
       assert(extra_data != nullptr);
@@ -92,7 +93,7 @@ template <class In, class Out>
 	printf("combination_map_[%d] = %s\n", i, combination_map[i]->str().c_str());
       }
     }
-
+*/
     /*
      * Combines this iteration into the total
      *
