@@ -108,6 +108,7 @@ template <class In, class Out>
         // reset current iteration counter
         ro->count_cur_iter = 0;
       }
+      this->dump_combination_map();
 
      }
 };
