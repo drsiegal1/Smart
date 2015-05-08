@@ -17,6 +17,10 @@ using namespace std;
 struct CountRedObj : public RedObj {
   size_t count_cur_iter = 0;  
   size_t count_so_far = 0;  
+  /*
+   *THIS IS NEEDED for iterative programs.  the default clone does not make a 'deep copy' and thus 
+   *the the combination map is not distributed correctly if this method is not included.
+   */ 
   RedObj* clone() override {
     return new CountRedObj(*this);
   }
@@ -74,8 +78,7 @@ template <class In, class Out>
     }
 
     /* Additional Function Overriding */
-    // Set up the initial centroids in combination_map_.
-/* 
+    // Set up the initial centroids in combination_map_. 
       void process_extra_data(const void* extra_data, map<int, unique_ptr<RedObj>>& combination_map) override {
       dprintf("Scheduler: Processing extra data...\n");
 
@@ -96,7 +99,7 @@ template <class In, class Out>
 	printf("combination_map_[%d] = %s\n", i, combination_map[i]->str().c_str());
       }
     }
-*/
+
     /*
      * Combines this iteration into the total
      *

@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
   // Set up the initial counts.
   size_t* counts = new size_t[out_len];
   for (size_t i = 0; i < out_len; ++i) {
-    counts[i] = 0;
+    counts[i] = 2;
   }
   
 
