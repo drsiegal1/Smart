@@ -17,6 +17,9 @@ using namespace std;
 struct CountRedObj : public RedObj {
   size_t count_cur_iter = 0;  
   size_t count_so_far = 0;  
+  RedObj* clone() override {
+    return new CountRedObj(*this);
+  }
   // Optional, only used for rendering the result.
   string str() const override {
     return string("(") + "count_cur_iter = " + to_string(count_cur_iter) + string("; count_so_far = ") + to_string(count_so_far)+ ")";
